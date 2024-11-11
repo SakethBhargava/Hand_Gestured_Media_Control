@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Control Using Hand Gesture</title>
+    <style>
+        /* General reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0047ab;
+            text-align: center;
+        }
+
+        /* Flex container for video and instructions */
+        .content {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap; /* Stack on smaller screens */
+        }
+
+        /* Video container styling */
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Gesture instructions section */
+        .container {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #0047ab;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        li img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border: 2px solid #0047ab;
+            border-radius: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            li {
+                font-size: 1rem;
+            }
+
+            .container, .video-container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            li img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hand Gestured Media Control</h1>
+    <div class="content">
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="Video Stream">
+        </div>
+
+        <div class="container">
+            <h2>Use the below Gestures to control the Media</h2>
+            <ol>
+                <li>Show  <span style='font-size:30px;'>&#128077;</span> to Forward the Media</li>
+                <li>Show  <span style='font-size:30px;'>&#9996;</span> to Rewind the Media</li>
+                <li>Show  <span style='font-size:30px;'>&#128076;</span> to Increase Volume</li>
+                <li>Show  <span style='font-size:30px;'>&#129304;</span> to Decrease Volume</li>
+                <li>Show  <span style='font-size:30px;'>&#128400;</span> to Play/Pause the Media</li>
+            </ol>
+            <br>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="footer">
+        <h3>developed by VRK & SSDMS &copy; copyright 2024</h3>
+    </div>
+</body>
+</html>
